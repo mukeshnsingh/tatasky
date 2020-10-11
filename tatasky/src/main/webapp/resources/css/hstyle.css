@@ -1,0 +1,121 @@
+.child{
+	margin-top: 0px;
+	background-image: url(../images/childarrow.gif)!important;
+	background-repeat: no-repeat!important;
+	background-position: 145px 8px!important;
+
+}
+
+/* Navigation Menu*/
+
+DIV#menu {
+	TOP: 50px; 
+	left: 3%; 
+	margin:0px auto; 
+	width: 955px;
+	height:25px;
+	margin-left:25px;
+	position:static;
+	background-color:#F5F5F5;
+	}
+
+DIV#menu UL {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px; 
+	PADDING-TOP: 0px;
+	height: 20px;
+}
+DIV#menu LI {
+	FLOAT: left; 
+	MARGIN: 0px; 
+	CURSOR: pointer; 
+	LINE-HEIGHT: 1.5em; 
+	LIST-STYLE-TYPE: none;
+}
+DIV#menu LI A:hover {
+	BACKGROUND: #F5F5F5
+}
+DIV#menu LI A {
+	PADDING-RIGHT: 10px; 
+	DISPLAY:block; 
+	PADDING-LEFT: 10px; 
+	FONT-WEIGHT:lighter; 
+	PADDING-BOTTOM: 0.25em; 
+	COLOR: #000000; 
+	PADDING-TOP: 3px; 
+	FONT-FAMILY: "Trebuchet MS", Tahoma, "Arial Narrow", Arial; 
+	TEXT-DECORATION: none;
+}
+UNKNOWN {
+	WIDTH: auto;
+}
+DIV#menu UL UL {
+	WIDTH: 140px; 
+	POSITION: absolute;
+}
+DIV#menu UL UL LI {
+	PADDING-RIGHT: 0px; 
+	MARGIN-TOP: -1px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	WIDTH: 100%; 
+	PADDING-TOP: 0px; 
+	TEXT-ALIGN: left;
+}
+
+div#menu UL UL LI A {
+	BORDER: #6ABAD3 1px solid; 
+	PADDING-LEFT: 10px; 
+	WIDTH: 140px; 
+	COLOR: #000000;
+	FONT-WEIGHT:lighter;
+	background: url(../images/menuSubBg.gif) repeat-x #F5F5F5;
+	}
+div#menu UL UL LI A:hover {
+	background: url(../images/menuSubBgHover.gif) repeat-x;
+	BACKGROUND: #F5F5F5;
+	color:#000000;
+ 
+
+}
+DIV#menu UL.level2 {
+	LEFT: -1px
+}
+DIV#menu UL UL UL {
+	margin-top: -25px;
+	left: 160px;
+	width: 180px;
+	height: 190px;
+
+}
+
+
+/*----Menu base color-----------------------------*/
+.menu0 {
+	BACKGROUND-COLOR: #F5F5F5;	
+}
+.menu1 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+.menu2 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+.menu3 {
+	BACKGROUND-COLOR: #F5F5F5;
+	
+}
+.menu4 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+.menu5 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+.menu6 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+.menu7 {
+	BACKGROUND-COLOR: #F5F5F5;
+}
+

@@ -1,0 +1,111 @@
+.heading-md {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.heading1 {
+    font-size: 43px;
+    margin-bottom: .75rem;
+}
+
+.heading2 {
+    color: #878787;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.gradient {
+    background: linear-gradient(330deg,#ff9000 0,red 50%,#0a00b2 100%);
+    background: -moz-linear-gradient(330deg,#ff9000 0,red 50%,#0a00b2 100%);
+    background: -webkit-linear-gradient(330deg,#ff9000 0,red 50%,#0a00b2 100%);
+    background-image: -ms-linear-gradient(330deg,#ff9000 0,red 50%,#0a00b2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+}
+
+.gradient {
+    -webkit-text-fill-color: transparent;
+}
+
+.myBtn {
+    padding: 12px 20px;
+    border-radius: 0px;
+}
+
+@media screen and (max-width: 767px){
+.heading1 {
+    font-size: 32px;
+    padding: 0;
+   }
+}
+
+.dropdown-toggle.active-dropdown::after {
+    transform: rotate(-90deg);
+}
+
+.navStng {
+    margin-left: 18px !important;
+} 
+
+.menuIcon {
+    color: #0092ed !important;
+    font-size: 22px;
+}
+
+.menuIcon:hover {
+    color: #444 !important;
+}
+
+.subMenu {
+    color: #0092ed !important;
+    font-size: 18px !important;
+}
+
+.subMenu:hover {
+    color: #444 !important;
+}
+
+.myNav {
+    background: #fff;
+    top: -72px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    width: 100% !important;
+}
+
+.bg {
+    background: linear-gradient(rgb(226, 232, 245) 0px, rgb(243, 245, 251) 10%, rgb(255, 255, 255) 23%, rgb(255, 255, 255) 100%);
+}
+
+.mr-right {
+    margin-right: -60px;
+}
+
+.mr-right2 {
+    margin-right: -40px;
+}
+
+.mr-button {
+    margin-left: 31px;
+}
+
+.mr-button2 {
+    margin-left: 51px;
+}
+
+.del {
+    text-align: center;
+    color: red;
+}
+
+.edit {
+    text-align: center;
+    color: green;
+}
+
+.fa {
+    cursor: pointer;
+}

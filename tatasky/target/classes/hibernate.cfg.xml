@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+<!--
+		<mapping class="com.sspl.entity.FileUploadEntity" />
+		<mapping class="com.sspl.entity.Md5Tbl" />
+-->
+		<mapping class="com.sspl.entity.DocumentWorkflowEntity" />
+		<mapping class="com.sspl.entity.SignatoriesMappingEntiry" />
+		<mapping class="com.sspl.entity.ContractReviewEntity" />
+		<mapping class="com.sspl.entity.ContractTypeEntity" />
+ 		<mapping class="com.sspl.entity.SignatoryEntity" />
+ 		<mapping class="com.sspl.entity.ProfileSignatoriesEntity" />
+ 		<mapping class="com.sspl.entity.ProfileEntity" />
+		<mapping class="com.sspl.entity.UsersRole" />
+		<mapping class="com.sspl.entity.UsersEntity" />
+		<mapping class="com.sspl.entity.UserRoleApplication" />
+ 		<mapping class="com.sspl.entity.Role" />
+		<mapping class="com.sspl.entity.Application" />
+		<mapping class="com.sspl.entity.Users" />
+		<mapping class="com.sspl.entity.UsersLog" />
+		<mapping class="com.sspl.entity.Department" />
+		<mapping class="com.sspl.entity.EmployeeEntity" />
+		<mapping class="com.sspl.entity.DocumentsEntity" />
+ 	</session-factory>
+</hibernate-configuration>

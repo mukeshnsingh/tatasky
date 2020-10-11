@@ -1,0 +1,108 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.sspl.master.controller" />
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="/WEB-INF/jdbc.properties" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" p:driverClassName="${jdbc.driverClassName}"
+		p:url="${jdbc.databaseurl}" p:username="${jdbc.username}" p:password="${jdbc.password}" />
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<!-- <prop key="hibernate.jdbc.batch_size">50</prop> -->
+			</props>
+		</property>
+	</bean>
+
+
+<!-- 	<bean id="administratorService"
+		class="com.sspl.master.service.AdministratorServiceImpl"></bean>
+	<bean id="administratorDAO" class="com.sspl.master.dao.AdministratorDAOImpl"></bean>
+
+ -->
+	<bean id="userService" class="com.sspl.master.service.UserServiceImpl"></bean>
+	<bean id="userDAO" class="com.sspl.master.dao.UserDAOImpl"></bean>
+	
+	<bean id="loginService" class="com.sspl.master.service.LoginServiceImpl"></bean>
+	<bean id="loginDAO" class="com.sspl.master.dao.LoginDAOImpl"></bean>
+	
+	<bean id="profileService" class="com.sspl.master.service.ProfileServiceImpl"></bean>
+	<bean id="profileDAO" class="com.sspl.master.dao.ProfileDAOImpl"></bean>
+	
+	<bean id="profileWorkflowService" class="com.sspl.master.service.ProfileWorkflowServiceImpl"></bean>
+	<bean id="profileWorkflowDAO" class="com.sspl.master.dao.ProfileWorkflowDOAImpl"></bean>
+
+	<bean id="contractMngmtService" class="com.sspl.master.service.ContractMngmtServiceImpl"></bean>
+	<bean id="contractMngmtDAO" class="com.sspl.master.dao.ContractMngmtDAOImpl"></bean>
+	
+	<bean id="documentService" class="com.sspl.master.service.DocumentServiceImpl"></bean>
+	<bean id="documentDAO" class="com.sspl.master.dao.DocumentDAOImpl"></bean>
+	
+	<bean id="employeeService" class="com.sspl.master.service.EmployeeServiceImpl"></bean>
+	<bean id="employeeDAO" class="com.sspl.master.dao.EmployeeDAOImpl"></bean>
+	
+	<bean id="departmentService" class="com.sspl.master.service.DepartmentServiceImpl"></bean>
+	<bean id="departmentDAO" class="com.sspl.master.dao.DepartmentDAOImpl"></bean>
+	
+	<bean id="documentApprovalService" class="com.sspl.master.service.DocumentApprovalServiceImpl"></bean>
+	<bean id="documentApprovalDAO" class="com.sspl.master.dao.DocumentApprovalDAOImpl"></bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- setting maximum upload size -->
+		<property name="maxUploadSize" value="20990000" />
+	</bean>
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven />
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/login" access="ROLE_USER" />
+		 <logout logout-success-url="/logoutSuccess" />
+	        <form-login login-page="/login" default-target-url="/welcome"
+	            authentication-failure-url="/fail2login" />
+	</http>
+	<authentication-manager>
+     <authentication-provider>
+       <jdbc-user-service data-source-ref="dataSource" authorities-by-username-query="SELECT users.user_id,role.role_name FROM role,users WHERE role.role_id=users.role_id AND users.enabled='1' AND role.enabled='Y' AND users.username=?"
+            users-by-username-query="SELECT username, password, enabled FROM users WHERE enabled='1' AND username = ?"/>
+     </authentication-provider>
+   </authentication-manager>
+</beans:beans>
